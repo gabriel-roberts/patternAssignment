@@ -1,0 +1,106 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="default" extends="struts-default">
+      <action name="addCustomer" class="operations.CustomerOperations" method="execute">
+            <result name="success">/addCustomer.jsp</result>
+			<result name="failed">/index.jsp</result>			
+        </action>
+
+		<action name="SignIn" class="operations.CustomerOperations" method="signIn">
+            <result name="Success">/customerHome.jsp</result>
+			<result name="Fail">/error1.jsp</result>	
+        </action>
+
+		<action name="SignInAdmin" class="operations.AdministratorsOperations" method="signIn">
+            <result name="Success">/administratorHome.jsp</result>
+			<result name="Fail">/error1.jsp</result>	
+        </action>
+
+		<action name="addAdministrator" class="operations.AdministratorsOperations" method="execute">
+            <result name="success">/addCustomer.jsp</result>
+			<result name="failed">/error1.jsp</result>			
+        </action>
+
+		<action name="addBook" class="operations.BookOperations" method="execute">
+            <result name="success">/booksAdmin.jsp</result>
+			<result name="failed">/error1.jsp</result>			
+        </action>
+
+		<action name="listCustomersAction" class="operations.CustomerOperations" method="listCustomers">
+            <result name="success">/customersAdmin.jsp</result>		
+        </action>
+
+		<action name="findCustomer" class="operations.CustomerOperations" method="findCustomer">
+            <result name="success">/editCustomer.jsp</result>
+        </action>
+
+		<action name="editCustomer" class="operations.CustomerOperations" method="editCustomer">
+            <result name="success">/customersAdmin.jsp</result>
+			<result name="editSuccess">/customerHome.jsp</result>
+        </action>
+
+		<action name="deleteCustomer" class="operations.CustomerOperations" method="deleteCustomer">
+            <result name="success">/customersAdmin.jsp</result>
+        </action>
+
+		<action name="listBooksAction" class="operations.BookOperations" method="listBooks">
+            <result name="success">/booksAdmin.jsp</result>		
+        </action>
+
+		<action name="findBook" class="operations.BookOperations" method="findBook">
+            <result name="success">/editBook.jsp</result>
+        </action>
+
+		<action name="editBook" class="operations.BookOperations" method="editBook">
+            <result name="success">/booksAdmin.jsp</result>
+        </action>
+
+		<action name="deleteBook" class="operations.BookOperations" method="deleteBook">
+            <result name="success">/booksAdmin.jsp</result>
+        </action>
+
+		<action name="findAdministrator" class="operations.AdministratorsOperations" method="findAdministrator">
+            <result name="success">/editAdministrator.jsp</result>
+        </action>
+
+		<action name="editAdministrator" class="operations.AdministratorsOperations" method="editAdministrator">
+            <result name="success">/changeDetails.jsp</result>
+        </action>
+
+		<action name="buyBook" class="operations.OrdersOperations" method="execute">
+            <result name="success">/shoppingCart.jsp</result>
+			<result name="fail">/booksAdmin.jsp</result>	
+        </action>
+
+		<action name="rateBook" class="operations.BookOperations" method="findBook">
+            <result name="success">/createCommentPage.jsp</result>
+        </action>
+
+		<action name="deleteOrder" class="operations.OrdersOperations" method="deleteOrder">
+            <result name="success">/shoppingCart.jsp</result>
+        </action>
+
+		<action name="listOrdersAction" class="operations.OrdersOperations" method="listOrders">
+            <result name="success">/shoppingCart.jsp</result>
+        </action>
+
+		<action name="addComment" class="operations.CommentsOperations" method="execute">
+            <result name="success">/createCommentPage.jsp</result>
+        </action>
+
+		<action name="listComments" class="operations.CommentsOperations" method="listComments">
+            <result name="success">/bookComments.jsp</result>
+        </action>
+		
+		<action name="searchBook" class="operations.BookOperations" method="searchBook">
+            <result name="success">/booksAdmin.jsp</result>
+        </action>
+		
+		<action name="signOut" class="operations.CustomerOperations" method="signOut">
+            <result name="success">/index.jsp</result>
+        </action>
+    </package>
+</struts>
